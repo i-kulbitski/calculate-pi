@@ -6,7 +6,7 @@ pipeline {
         timestamps()
     }
     triggers {
-        cron '17 35 * * *'
+        cron '35 17 * * *'
     }
     stages {
         stage('Calculate') {
