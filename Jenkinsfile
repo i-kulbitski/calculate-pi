@@ -6,7 +6,7 @@ pipeline {
         timestamps()
     }
     triggers {
-        cron '17 15 * * *'
+        cron '17 35 * * *'
     }
     stages {
         stage('Calculate') {
@@ -15,6 +15,7 @@ pipeline {
                     chmod +x ./scripts/algorithm.sh
                     ./scripts/algorithm.sh
                     ''')
+                archiveArtifacts artifacts: '*.txt', fingerprint: true, followSymlinks: false
             }
         }
     }
